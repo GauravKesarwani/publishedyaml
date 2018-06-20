@@ -1,0 +1,20 @@
+root:
+  class: BasicStep
+  name: "Root Node"
+  id: "root"
+
+step1:
+  class: BasicStep
+  name: "Step1"
+  id: "step1"
+  filter: event.header.app_id = "imap"
+
+rule:
+  class: BasicRule
+  name: "IMAP events"
+  cmsTopicName: "imap-events"
+  dagMap:
+    root : [ "@step1" ]
+  suppressionTimeout: 1814400
+  maxLatency: 10
+  persistenceTimeout: 600
