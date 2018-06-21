@@ -10,9 +10,9 @@ step1:
   filter: event.header.app_id = "imap"
 
 rule:
-  class: BasicRule
-  name: "IMAP events"
-  cmsTopicName: "imap-events"
+  class: TestRule
+  name: "test events"
+  cmsTopicName: "test-events"
   dagMap:
     root : [ "@step1" ]
   suppressionTimeout: 1814400
